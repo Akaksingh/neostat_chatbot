@@ -9,7 +9,10 @@ from models.embeddings import get_embedding_model
 from utils.prompting import build_system_prompt
 from utils.rag import load_documents_from_directory, build_retriever, retrieve_context
 from utils.web_search import should_trigger_web_search, search_web, format_web_results
+import os
+import streamlit as st
 
+GROQ_API_KEY = st.secrets["GROQ_API_KEY"]
 
 def get_chat_response(chat_model, messages, system_prompt):
     """Get response from the chat model"""
